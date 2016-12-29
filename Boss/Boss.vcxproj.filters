@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Components">
+      <UniqueIdentifier>{c058760c-8822-45f3-9e48-1ded1029a2e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems">
+      <UniqueIdentifier>{cfce78d0-4a24-4965-b3da-1030f520a268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\States">
+      <UniqueIdentifier>{5d31097e-30c2-4262-9f01-80cfa95ae7df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Anax">
+      <UniqueIdentifier>{110697f1-e3ad-42ba-9009-b84d2ff721c7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\OneDrive\Documents\anax-master\src\anax\detail\BaseSystem.cpp">
+      <Filter>Source Files\Anax</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\OneDrive\Documents\anax-master\src\anax\Entity.cpp">
+      <Filter>Source Files\Anax</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\OneDrive\Documents\anax-master\src\anax\detail\EntityComponentStorage.cpp">
+      <Filter>Source Files\Anax</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\OneDrive\Documents\anax-master\src\anax\detail\EntityIdPool.cpp">
+      <Filter>Source Files\Anax</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\OneDrive\Documents\anax-master\src\anax\detail\Filter.cpp">
+      <Filter>Source Files\Anax</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\OneDrive\Documents\anax-master\src\anax\World.cpp">
+      <Filter>Source Files\Anax</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Components.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="playerComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="positionComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="moveSystem.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerSystem.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="StateStruct.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Fighting.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="States.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="velocityComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
