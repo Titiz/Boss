@@ -12,22 +12,22 @@ using namespace anax;
 struct RectComponent : Component
 {
 public:
-	RectComponent(float width, float height, sf::Color color);
+	void set(float width, float height, sf::Color color);
 
 	sf::Vector2f size;
 	sf::RectangleShape rect;
-	sf::Color color;
 	bool render = true;
 
 	
 };
 
 
-RectComponent::RectComponent(float width, float height, sf::Color col)
+void RectComponent::set(float width, float height, sf::Color color)
 {
 	size.x = width;
 	size.y = height;
-	color = col;
+	rect.setSize(size);
+	rect.setFillColor(color);
 }
 
 #endif //RECT_COMPONENT

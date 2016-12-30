@@ -1,34 +1,47 @@
 #pragma once
 #include <anax/anax.hpp>
 #include <Components.h>
+#include <Constants.h>
 #include <iostream>
 using namespace anax;
 
-#ifndef MOVEMENT_SYSTEM
-#define MOVEMENT_SYSTEM
+#ifndef RENDER_SYSTEM
+#define RENDER_SYSTEM
 
 
 
-struct MovementSystem : System<Requires<PositionComponent,  >>
+struct RenderSystem : System<Requires<PositionComponent, RectComponent>>
 {
 	void process(Entity& e, double deltaTime)
 	{
 		PositionComponent& positionComp = e.getComponent<PositionComponent>();
-		VelocityComponent& velocityComp = e.getComponent<VelocityComponent>();
+		RectComponent& rectComponent = e.getComponent<RectComponent>();
 		// translate the object
-		std::cout << velocityComp.velocity.x;
-		positionComp.position.x += velocityComp.velocity.x * deltaTime;
-		positionComp.position.y += velocityComp.velocity.y * deltaTime;
+		rectComponent.rect.setPosition(positionComp.position);
+
+		render(rectComponent.rect);
+
 	}
 
 	void update(double deltaTime)
 	{
 		auto entities = getEntities();
 
+
+		WINDOW.clear();
 		for (auto i : entities)
 		{
 			process(i, deltaTime);
 		}
-	};
+		WINDOW.display();
+	}
+
+
+	void render(sf::RectangleShape rect) 
+	{
+		WINDOW.draw(rect);
+	}
+
 };
-#endif // MOVEMENT_SYSTEM
+
+#endif // RENDER_SYSTEM

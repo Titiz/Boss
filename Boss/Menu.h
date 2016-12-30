@@ -2,6 +2,7 @@
 #include <StateStruct.h>
 
 
+
 class MenuState: public State {
 public:
 			MenuState();
@@ -14,8 +15,11 @@ private:
 	sf::CircleShape mPlayer;
 	anax::World world;
 	sf::Clock deltaClock;
+
 	MovementSystem movsystem;
 	PlayerSystem play;
+	RenderSystem rend;
+
 	Entity player = world.createEntity();
 
 };
@@ -29,10 +33,12 @@ MenuState::MenuState()
 
 	world.addSystem(play);
 	world.addSystem(movsystem);
+	world.addSystem(rend);
 
 	player.addComponent<PositionComponent>();
 	player.addComponent<VelocityComponent>();
 	player.addComponent<PlayerComponent>();
+	player.addComponent<RectComponent>().set(200, 200, sf::Color::Red);
 	player.activate();
 }
 
@@ -54,15 +60,14 @@ void MenuState::update() {
 
 	movsystem.update(deltaTime.asSeconds());
 	play.update(deltaTime.asSeconds());
+	rend.update(deltaTime.asSeconds());
 
 	mPlayer.setOrigin(pos.x, pos.y);
 	world.refresh();
 }
 
 void MenuState::render() {
-	WINDOW.clear();
-	WINDOW.draw(mPlayer);
-	WINDOW.display();
+	
 }
 
 void MenuState::processEvents() {

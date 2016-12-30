@@ -20,11 +20,11 @@ struct PlayerSystem : System<Requires<PositionComponent, VelocityComponent, Play
 		sf::Vector2f velocity = velocityComp.velocity;
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-			velocityComp.set_velocity(v, velocity.y);
+			velocityComp.set_velocity(-v, velocity.y);
 		
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-			velocityComp.set_velocity(-v, velocity.y);
+			velocityComp.set_velocity(v, velocity.y);
 		
 		} 
 		else {
@@ -35,10 +35,10 @@ struct PlayerSystem : System<Requires<PositionComponent, VelocityComponent, Play
 		velocity = velocityComp.velocity;
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-			velocityComp.set_velocity(velocity.x , v);
+			velocityComp.set_velocity(velocity.x , -v);
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-			velocityComp.set_velocity(velocity.x, -v);
+			velocityComp.set_velocity(velocity.x, v);
 		}
 		else {
 			velocityComp.set_velocity(velocity.x, 0);
