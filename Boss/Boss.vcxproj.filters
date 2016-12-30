@@ -89,5 +89,11 @@
     <ClInclude Include="StateStruct.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
+    <ClInclude Include="RectComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="renderSystem.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

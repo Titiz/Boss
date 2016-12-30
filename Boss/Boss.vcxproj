@@ -32,11 +32,13 @@
     <ClInclude Include="Constants.h" />
     <ClInclude Include="Fighting.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="renderSystem.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="moveSystem.h" />
     <ClInclude Include="playerComponent.h" />
     <ClInclude Include="PlayerSystem.h" />
     <ClInclude Include="positionComponent.h" />
+    <ClInclude Include="RectComponent.h" />
     <ClInclude Include="States.h" />
     <ClInclude Include="StateStruct.h" />
     <ClInclude Include="Systems.h" />
