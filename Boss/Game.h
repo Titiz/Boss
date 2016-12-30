@@ -24,7 +24,6 @@ private:
 
 private:
 	std::vector<State*> States;
-	int screen = 0;
 
 	//states
 	FightingState fightingState;
@@ -39,13 +38,14 @@ Game::Game()
 {
 	States.push_back(&menuState);
 	States.push_back(&fightingState);
+	
 }
 
 
 
 void Game::run() {
-	while (screen >= 0) {
-		screen = States[screen]->run();
+	while (STATE_ID >= 0) {
+		States[STATE_ID]->run();
 	}
 }
 

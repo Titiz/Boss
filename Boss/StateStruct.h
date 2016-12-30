@@ -7,8 +7,8 @@
 class State {
 
 public:
-	virtual ~State() {};
-	virtual int	run() = 0;
+	virtual			~State() {};
+	virtual void	run() = 0;
 
 private:
 	virtual void	processEvents() = 0;

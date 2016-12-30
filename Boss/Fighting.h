@@ -5,7 +5,7 @@
 class FightingState : public State {
 public:
 			FightingState();
-	int	run();
+	void 	run();
 private:
 	void	processEvents();
 	void	update();
@@ -36,13 +36,15 @@ FightingState::FightingState()
 	player.activate();
 }
 
-int FightingState::run() {
+void FightingState::run() {
 	update();
 	render();
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
-		return 0;
+		STATE_ID = STATE_IDS::MENU;
 	}
-	return 1;
+	else {
+		STATE_ID = STATE_IDS::FIGHTING;
+	}
 }
 
 void FightingState::update() {

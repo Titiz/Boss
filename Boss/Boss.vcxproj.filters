@@ -71,9 +71,6 @@
     <ClInclude Include="Systems.h">
       <Filter>Header Files\Systems</Filter>
     </ClInclude>
-    <ClInclude Include="StateStruct.h">
-      <Filter>Header Files\Systems</Filter>
-    </ClInclude>
     <ClInclude Include="Fighting.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
@@ -88,6 +85,9 @@
     </ClInclude>
     <ClInclude Include="velocityComponent.h">
       <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="StateStruct.h">
+      <Filter>Header Files\States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

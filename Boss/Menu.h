@@ -4,8 +4,8 @@
 
 class MenuState: public State {
 public:
-	MenuState();
-	int	run();
+			MenuState();
+	void	run();
 private:
 	void	processEvents();
 	void	update();
@@ -36,15 +36,16 @@ MenuState::MenuState()
 	player.activate();
 }
 
-int MenuState::run() {
+void MenuState::run() {
 	update();
 	render();
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
-		return 1;
+		STATE_ID = STATE_IDS::FIGHTING;
 	}
-	return 0;
-	
+	else {
+		STATE_ID = STATE_IDS::MENU;
+	}
 }
 
 void MenuState::update() {
