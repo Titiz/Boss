@@ -1,6 +1,5 @@
 #include <anax/anax.hpp>
-#include <velocityComponent.h>
-#include <positionComponent.h>
+#include <Components.h>
 #include <iostream>
 using namespace anax;
 
@@ -16,9 +15,15 @@ struct MovementSystem : System<Requires<PositionComponent, VelocityComponent>>
 		PositionComponent& positionComp = e.getComponent<PositionComponent>();
 		VelocityComponent& velocityComp = e.getComponent<VelocityComponent>();
 		// translate the object
-		std::cout << velocityComp.velocity.x;
+
 		positionComp.position.x += velocityComp.velocity.x * deltaTime;
 		positionComp.position.y += velocityComp.velocity.y * deltaTime;
+
+		if (e.hasComponent<RectComponent>()) {
+			RectComponent& rectCom = e.getComponent<RectComponent>();
+			rectCom.center.x += velocityComp.velocity.x * deltaTime;
+			rectCom.center.y += velocityComp.velocity.y * deltaTime;
+		}
 	}
 
 	void update(double deltaTime)

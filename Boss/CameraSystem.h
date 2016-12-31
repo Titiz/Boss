@@ -11,14 +11,15 @@ using namespace anax;
 
 
 
-struct CameraSystem : System<Requires<PlayerComponent, PositionComponent>>
+struct CameraSystem : System<Requires<PlayerComponent, PositionComponent, RectComponent>>
 {
 	void process(Entity& e, double deltaTime)
 	{
 		RectComponent& rectComponent = e.getComponent<RectComponent>();
 		PositionComponent& positionComp = e.getComponent<PositionComponent>();
 
-		VIEW.setCenter(positionComp.position.x, positionComp.position.y);
+
+		VIEW.setCenter(rectComponent.center.x , rectComponent.center.y);
 
 
 	}
