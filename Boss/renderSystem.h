@@ -27,8 +27,9 @@ struct RenderSystem : System<Requires<PositionComponent, RectComponent>>
 	{
 		auto entities = getEntities();
 
-
 		WINDOW.clear();
+		WINDOW.setView(VIEW);
+		
 		for (auto i : entities)
 		{
 			process(i, deltaTime);
