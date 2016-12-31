@@ -25,6 +25,9 @@
     <Filter Include="Source Files\Anax">
       <UniqueIdentifier>{110697f1-e3ad-42ba-9009-b84d2ff721c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Util">
+      <UniqueIdentifier>{d172b98f-32b0-4b69-8d24-70c7ef3cde42}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -50,9 +53,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Constants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Components.h">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
@@ -97,6 +97,12 @@
     </ClInclude>
     <ClInclude Include="CameraSystem.h">
       <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Header Files\Util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

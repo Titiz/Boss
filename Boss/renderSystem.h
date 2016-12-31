@@ -3,6 +3,7 @@
 #include <Components.h>
 #include <Constants.h>
 #include <iostream>
+#include <Systems.h>
 using namespace anax;
 
 #ifndef RENDER_SYSTEM
@@ -12,11 +13,12 @@ using namespace anax;
 
 struct RenderSystem : System<Requires<PositionComponent, RectComponent>>
 {
+
 	void process(Entity& e, double deltaTime)
 	{
 		PositionComponent& positionComp = e.getComponent<PositionComponent>();
 		RectComponent& rectComponent = e.getComponent<RectComponent>();
-		// translate the object
+
 		rectComponent.rect.setPosition(positionComp.position);
 
 		render(rectComponent.rect);
@@ -28,7 +30,7 @@ struct RenderSystem : System<Requires<PositionComponent, RectComponent>>
 		auto entities = getEntities();
 
 		WINDOW.clear();
-		WINDOW.setView(VIEW);
+		
 		
 		for (auto i : entities)
 		{

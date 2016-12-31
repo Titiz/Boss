@@ -4,6 +4,7 @@
 #include <Components.h>
 #include <Constants.h>
 #include <iostream>
+#include <Camera.h>
 using namespace anax;
 
 #ifndef CAMERA_SYSTEM
@@ -13,14 +14,42 @@ using namespace anax;
 
 struct CameraSystem : System<Requires<PlayerComponent, PositionComponent, RectComponent>>
 {
+
+	Camera camera;
+	sf::Event event;
+	
+	void unlock_camera() {
+		
+		while (WINDOW.pollEvent(event))
+		{
+			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::C) {
+				camera.locked = !camera.locked;
+			}
+		}
+
+	}
+
+	
+	
+
+
 	void process(Entity& e, double deltaTime)
 	{
+		
+		sf::View view = camera.view;
 		RectComponent& rectComponent = e.getComponent<RectComponent>();
 		PositionComponent& positionComp = e.getComponent<PositionComponent>();
 
+		unlock_camera();
 
-		VIEW.setCenter(rectComponent.center.x , rectComponent.center.y);
-
+		if (camera.locked) {
+			camera.position = rectComponent.center;
+			camera.view.setCenter(rectComponent.center.x, rectComponent.center.y);
+		}
+		else {
+			camera.moveWithKeys(deltaTime);
+		}
+			WINDOW.setView(camera.view);
 
 	}
 
@@ -42,5 +71,9 @@ struct CameraSystem : System<Requires<PlayerComponent, PositionComponent, RectCo
 	}
 
 };
+
+
+
+
 
 #endif // CAMERA_SYSTEM
