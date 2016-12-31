@@ -63,7 +63,7 @@ void MenuState::update() {
 	sf::Vector2f pos = player.getComponent<PositionComponent>().position;
 	sf::Time deltaTime = deltaClock.restart();
 
-
+	
 	//Other Systems
 	play.update(deltaTime.asSeconds());
 	movsystem.update(deltaTime.asSeconds());

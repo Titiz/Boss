@@ -16,16 +16,25 @@ struct CameraSystem : System<Requires<PlayerComponent, PositionComponent, RectCo
 {
 
 	Camera camera;
+	
+	
 	sf::Event event;
 	
-	void unlock_camera();
-	void update(double deltaTime);
+			CameraSystem();
+	void	unlock_camera();
+	void	update(double deltaTime);
+	
 	
 private:
-	void process(Entity& e, double deltaTime); void process(Entity& e, double deltaTime);
-	void render(sf::RectangleShape rect) {};
+	void	process(Entity& e, double deltaTime); 
+	void	render(sf::RectangleShape rect) {};
 
 };
+
+
+CameraSystem::CameraSystem() {
+	CAMERA_POINTER = &camera;
+}
 
 
 void CameraSystem::update(double deltaTime)
@@ -56,7 +65,7 @@ void CameraSystem::process(Entity& e, double deltaTime)
 	else {
 		camera.moveWithKeys(deltaTime);
 	}
-	WINDOW.setView(camera.view);
+	
 
 }
 

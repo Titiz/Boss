@@ -13,14 +13,14 @@ using namespace anax;
 
 struct RenderSystem : System<Requires<PositionComponent, RectComponent>>
 {
-
+	
 	void process(Entity& e, double deltaTime)
 	{
 		PositionComponent& positionComp = e.getComponent<PositionComponent>();
 		RectComponent& rectComponent = e.getComponent<RectComponent>();
 
+		
 		rectComponent.rect.setPosition(positionComp.position);
-
 		render(rectComponent.rect);
 
 	}
@@ -28,8 +28,9 @@ struct RenderSystem : System<Requires<PositionComponent, RectComponent>>
 	void update(double deltaTime)
 	{
 		auto entities = getEntities();
-
 		WINDOW.clear();
+		Camera camera = *CAMERA_POINTER;
+		WINDOW.setView(camera.view);
 		
 		
 		for (auto i : entities)
