@@ -24,8 +24,9 @@ public:
 
 void Camera::setCameraPos(sf::Vector2f new_position) {
 	position = new_position;
-	// WINDOW.clear(); WINDOW still cannot be referenced in here
 }
+
+
 
 void Camera::moveWithKeys(float deltaTime) {
 	int velocity = 1;

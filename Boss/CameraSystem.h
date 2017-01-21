@@ -28,6 +28,7 @@ struct CameraSystem : System<Requires<PlayerComponent, PositionComponent, RectCo
 private:
 	void	process(Entity& e, double deltaTime); 
 	void	render(sf::RectangleShape rect) {};
+	float	zoom = 0.9f;
 
 };
 
@@ -40,7 +41,7 @@ CameraSystem::CameraSystem() {
 void CameraSystem::update(double deltaTime)
 {
 	auto entities = getEntities();
-
+	
 
 	for (auto i : entities)
 	{
@@ -57,6 +58,7 @@ void CameraSystem::process(Entity& e, double deltaTime)
 	PositionComponent& positionComp = e.getComponent<PositionComponent>();
 
 	unlock_camera();
+	
 
 	if (camera.locked) {
 		camera.position = rectComponent.center;
@@ -65,7 +67,6 @@ void CameraSystem::process(Entity& e, double deltaTime)
 	else {
 		camera.moveWithKeys(deltaTime);
 	}
-	
 
 }
 
@@ -76,6 +77,13 @@ void CameraSystem::unlock_camera() {
 	{
 		if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::C) {
 			camera.locked = !camera.locked;
+		}
+
+		if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::P) {
+			camera.view.zoom(zoom);
+		}
+		else if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::O) {
+			camera.view.zoom(1 / zoom);
 		}
 	}
 
