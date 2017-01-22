@@ -1,5 +1,5 @@
 #pragma once
-#include <SFML\Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include <anax/anax.hpp>
 #include <States.h>
 #include <vector>

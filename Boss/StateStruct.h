@@ -1,6 +1,6 @@
 #pragma once
-#include <SFML\Graphics.hpp>
-#include <anax\anax.hpp>
+#include <SFML/Graphics.hpp>
+#include <anax/anax.hpp>
 #include <Systems.h>
 #include <Constants.h>
 

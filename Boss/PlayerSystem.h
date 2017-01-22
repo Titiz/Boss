@@ -1,4 +1,4 @@
-#include <anax\anax.hpp>
+#include <anax/anax.hpp>
 #include <Components.h>
 #include <SFML/Graphics.hpp>
 #include <iostream>
