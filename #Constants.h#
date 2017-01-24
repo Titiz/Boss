@@ -1,6 +1,7 @@
 #pragma once
-#include <SFML/Graphics.hpp>
-#include <Camera.h>
+# include <SFML/Graphics.hpp>
+# include <Camera.h>
+
 
 
 //Global Variables
@@ -11,11 +12,10 @@ sf::RenderWindow WINDOW(sf::VideoMode(SIZE.x, SIZE.y, 32), "SFML Demo 3");
 sf::RenderWindow * WINDOW_POINTER = &WINDOW;
 Camera *CAMERA_POINTER;
 
-
-//Quick enumerates for key mapping (might be changed later on)
-enum MOVEMENT {
+enum MOVEMENTS {
   MOVE_UP, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT, ROLL, SPRINT
 };
+
 
 enum ATTACKS {
   DASH, SWING
