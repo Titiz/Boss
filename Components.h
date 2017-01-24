@@ -1,5 +1,5 @@
-#include <playerComponent.h>
-#include <positionComponent.h>
-#include <velocityComponent.h>
+#include <PlayerComponent.h>
+#include <PositionComponent.h>
+#include <VelocityComponent.h>
 #include <RectComponent.h>
-#include <controllerComponent.h>
+#include <ControllerComponent.h>

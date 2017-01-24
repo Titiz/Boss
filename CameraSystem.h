@@ -11,7 +11,6 @@ using namespace anax;
 #define CAMERA_SYSTEM
 
 
-
 struct CameraSystem : System<Requires<PlayerComponent, PositionComponent, RectComponent>>
 {
 

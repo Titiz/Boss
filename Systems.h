@@ -1,4 +1,4 @@
 #include <PlayerSystem.h>
-#include <moveSystem.h>
-#include <renderSystem.h>
+#include <MoveSystem.h>
+#include <RenderSystem.h>
 #include <CameraSystem.h>
