@@ -12,7 +12,6 @@ sf::RenderWindow* WINDOW_POINTER = &WINDOW;
 Camera *CAMERA_POINTER;
 
 
-//Quick enumerates for key mapping (might be changed later on)
 enum MOVEMENT {
   MOVE_UP, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT, ROLL, SPRINT
 };
@@ -23,5 +22,5 @@ enum ATTACKS {
 
 enum CAMERA {
   ZOOM_IN, ZOOM_OUT, LOCK_TOGGLE
-}
+};
 
