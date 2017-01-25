@@ -1,9 +1,10 @@
 #pragma once
 #include <iostream>
 #include <anax/anax.hpp>
-#include <Components.h>
-#include <Constants.h>
-#include <Camera.h>
+
+#include "Components.h"
+#include "Constants.h"
+#include "Camera.h"
 
 
 #ifndef CAMERA_SYSTEM

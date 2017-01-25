@@ -1,8 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <anax/anax.hpp>
-#include <Components.h>
-
+#include "Components.h"
 
 
 class Camera {
