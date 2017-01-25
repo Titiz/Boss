@@ -19,11 +19,7 @@ public:
 	sf::Vector2f center;
 	bool render;
 	// Set true if you want it render
-	
-	
-	
 };
-
 
 void RectComponent::set(float width, float height, sf::Color color, bool rend)
 {

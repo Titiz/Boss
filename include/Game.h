@@ -38,18 +38,12 @@ Game::Game()
 {
 	States.push_back(&menuState);
 	States.push_back(&fightingState);
-	
 }
-
-
 
 void Game::run() {
 	while (STATE_ID >= 0) {
 		States[STATE_ID]->run();
 	}
 }
-
-
-
 
 #endif //GAME

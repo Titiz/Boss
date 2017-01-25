@@ -1,12 +1,11 @@
 #include <anax/anax.hpp>
 #include <Components.h>
 #include <iostream>
+#include <Constants.h>
 using namespace anax;
 
 #ifndef MOVEMENT_SYSTEM
 #define MOVEMENT_SYSTEM
-
-
 
 struct MovementSystem : System<Requires<PositionComponent, VelocityComponent>>
 {
