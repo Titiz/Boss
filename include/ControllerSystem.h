@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 #include <anax/anax.hpp>
 #include <SFML/Graphics.hpp>
 #include <Components.h>
@@ -24,7 +23,7 @@ ControllerSystem::ControllerSystem() {}
 
 void ControllerSystem::process(Entity& e, double deltaTime)
 {
-  ControllerComponent controllerComp = e.getComponent<ControllerComponent>();
+  ControllerComponent& controllerComp = e.getComponent<ControllerComponent>();
   while (WINDOW.pollEvent(event)) {
      switch (event.key.code) {
 		case sf::Keyboard::W:
