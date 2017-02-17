@@ -104,5 +104,8 @@
     <ClInclude Include="Constants.h">
       <Filter>Header Files\Util</Filter>
     </ClInclude>
+    <ClInclude Include="AbilitySystem.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
