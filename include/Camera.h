@@ -1,8 +1,7 @@
 #pragma once
-#include <SFML\Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include <anax/anax.hpp>
-#include <Components.h>
-
+#include "Components.h"
 
 
 class Camera {
@@ -15,17 +14,12 @@ public:
 	
 	void setCameraPos(sf::Vector2f);
 	void moveWithKeys(float);
-	
-
 };
-
-
 
 
 void Camera::setCameraPos(sf::Vector2f new_position) {
 	position = new_position;
 }
-
 
 
 void Camera::moveWithKeys(float deltaTime) {
@@ -44,9 +38,3 @@ void Camera::moveWithKeys(float deltaTime) {
 	}
 	view.setCenter(position.x, position.y);
 }
-
-
-
-
-
-

@@ -1,4 +1,4 @@
-#include <anax\anax.hpp>
+#include <anax/anax.hpp>
 
 #ifndef PLAYER_COMPONENT
 #define PLAYER_COMPONENT

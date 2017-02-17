@@ -1,6 +1,6 @@
 #pragma once
-#include <SFML\Graphics.hpp>
-#include <anax\anax.hpp>
+#include <SFML/Graphics.hpp>
+#include <anax/anax.hpp>
 #include <Systems.h>
 #include <Constants.h>
 
@@ -14,5 +14,4 @@ private:
 	virtual void	processEvents() = 0;
 	virtual void	update() = 0;
 	virtual void	render() = 0;
-
-};	
+};
