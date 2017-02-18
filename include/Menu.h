@@ -1,5 +1,7 @@
 #pragma once
 #include <StateStruct.h>
+#include <Systems.h>
+
 
 class MenuState: public State {
 public:
@@ -19,6 +21,8 @@ private:
 	RenderSystem rend;
 	CameraSystem cameraSystem;
 	ControllerSystem contSystem;
+	
+	
 
 	Entity player = world.createEntity();
 	Entity Boss = world.createEntity();
@@ -34,7 +38,7 @@ MenuState::MenuState()
 	world.addSystem(contSystem);
 
 	player.addComponent<PositionComponent>();
-	player.addComponent<VelocityComponent>();
+	player.addComponent<VelocityComponent>().set_max_velocity(50, 50);
 	player.addComponent<PlayerComponent>();
 	player.addComponent<RectComponent>().set(50, 50, sf::Color::Green);
 	player.addComponent<ControllerComponent>();
@@ -66,9 +70,11 @@ void MenuState::update() {
 
 	
 	//Other Systems
+	contSystem.update(deltaTime.asSeconds());
 	play.update(deltaTime.asSeconds());
 	movsystem.update(deltaTime.asSeconds());
 	cameraSystem.update(deltaTime.asSeconds());
+	
 	
 
 	//render Systems

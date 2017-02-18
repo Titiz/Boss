@@ -16,7 +16,7 @@ struct CameraSystem : System<Requires<PlayerComponent, PositionComponent, RectCo
 {
 	Camera camera;
 		
-	int event;
+	int event = 0;
 	
 	CameraSystem();
 	void	unlock_camera();
@@ -56,7 +56,10 @@ void CameraSystem::process(Entity& e, double deltaTime)
 
 	if (!controllerComp.camera.empty()) {
 		event = controllerComp.camera.back();
-		controllerComp.movement.pop();
+		controllerComp.camera.pop();
+	}
+	else {
+		event = 0;
 	}
 
 	unlock_camera();

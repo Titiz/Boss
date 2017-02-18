@@ -13,6 +13,7 @@ struct MovementSystem : System<Requires<PositionComponent, VelocityComponent>>
 	{
 		PositionComponent& positionComp = e.getComponent<PositionComponent>();
 		VelocityComponent& velocityComp = e.getComponent<VelocityComponent>();
+
 		// translate the object
 
 		positionComp.position.x += velocityComp.velocity.x * deltaTime;

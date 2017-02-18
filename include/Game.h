@@ -38,6 +38,7 @@ Game::Game()
 {
 	States.push_back(&menuState);
 	States.push_back(&fightingState);
+	WINDOW.setFramerateLimit(60);
 }
 
 void Game::run() {
