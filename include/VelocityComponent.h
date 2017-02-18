@@ -1,6 +1,7 @@
 #include <anax/anax.hpp>
 #include <SFML/System/Vector2.hpp>
 #include <vector>
+#include <VelocityVector.h>
 
 using namespace anax;
 
@@ -11,7 +12,7 @@ struct VelocityComponent : Component
 {
 	sf::Vector2f velocity;
 	sf::Vector2f max_velocity;
-	std::vector<sf::Vector2f> velocities;
+	std::vector<VelocityVector> velocities;
 
 	void set_max_velocity(float vx, float vy) {
 		max_velocity.x = vx;

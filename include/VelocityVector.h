@@ -12,7 +12,7 @@ public:
 
 	void dissipate() {
 		if (dissipates) {
-			x -= x * x / duration;
+			x -= x / duration;
 		}
 		time_existed += 1;
 		if (time_existed == duration){

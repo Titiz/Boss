@@ -2,6 +2,7 @@
 #include <Components.h>
 #include <iostream>
 #include <Constants.h>
+#include <VelocityVector.h>
 using namespace anax;
 
 #ifndef MOVEMENT_SYSTEM
@@ -13,6 +14,22 @@ struct MovementSystem : System<Requires<PositionComponent, VelocityComponent>>
 	{
 		PositionComponent& positionComp = e.getComponent<PositionComponent>();
 		VelocityComponent& velocityComp = e.getComponent<VelocityComponent>();
+
+		velocityComp.velocity.x = 0;
+		velocityComp.velocity.y = 0;
+		std::vector<VelocityVector> velocities;
+
+		for (int i = 0; i < velocityComp.velocities.size(); i++) {
+			velocityComp.velocity.x += velocityComp.velocities.at(i).x;
+			velocityComp.velocity.y += velocityComp.velocities.at(i).y;
+			velocityComp.velocities.at(i).dissipate();
+			if (!velocityComp.velocities.at(i).done) {
+				velocities.push_back(velocityComp.velocities.at(i));
+			}
+			
+		}
+		velocityComp.velocities = velocities;
+		
 
 		// translate the object
 

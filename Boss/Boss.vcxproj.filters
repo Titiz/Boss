@@ -68,9 +68,6 @@
     <ClInclude Include="StateStruct.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
-    <ClInclude Include="RectComponent.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\MovementSystem.h">
       <Filter>Header Files\Systems</Filter>
     </ClInclude>
@@ -125,8 +122,11 @@
     <ClInclude Include="..\include\AccelerationSystem.h">
       <Filter>Header Files\Systems</Filter>
     </ClInclude>
-    <ClInclude Include="VelocityVector.h">
+    <ClInclude Include="..\include\VelocityVector.h">
       <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RectComponent.h">
+      <Filter>Header Files\Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

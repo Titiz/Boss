@@ -2,10 +2,12 @@
 #include <SFML/Graphics.hpp>
 #include <anax/anax.hpp>
 #include "Components.h"
+#include <Constants.h>
 
 
 class Camera {
 public:
+	Camera();
 	sf::View view;
 	bool locked = true;
 	sf::Event event;
@@ -16,6 +18,11 @@ public:
 	void moveWithKeys(float);
 };
 
+
+Camera::Camera() {
+	view.reset(sf::FloatRect(400, 300, 800, 600));
+	setCameraPos(sf::Vector2f(0, 0));
+}
 
 void Camera::setCameraPos(sf::Vector2f new_position) {
 	position = new_position;

@@ -42,17 +42,17 @@
     <ClInclude Include="..\include\MovementSystem.h" />
     <ClInclude Include="..\include\PlayerSystem.h" />
     <ClInclude Include="..\include\PositionComponent.h" />
+    <ClInclude Include="..\include\RectComponent.h" />
     <ClInclude Include="..\include\RenderSystem.h" />
     <ClInclude Include="..\include\Systems.h" />
     <ClInclude Include="..\include\VelocityComponent.h" />
+    <ClInclude Include="..\include\VelocityVector.h" />
     <ClInclude Include="AbilityComponent.h" />
     <ClInclude Include="Fighting.h" />
     <ClInclude Include="playerComponent.h" />
     <ClInclude Include="positionComponent.h" />
-    <ClInclude Include="RectComponent.h" />
     <ClInclude Include="States.h" />
     <ClInclude Include="StateStruct.h" />
-    <ClInclude Include="VelocityVector.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5FED7FBE-4DCD-46E5-8303-329E2D4BA689}</ProjectGuid>
