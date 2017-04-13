@@ -1,11 +1,11 @@
+TARGET=main
 COMPILER=g++
-LIBINCLUDE=./include/
+LIBINCLUDE=include/
 LDFLAGS=-lsfml-window -lsfml-graphics -lanax -lsfml-system
 
 all:
-	mkdir -p build 
-	$(COMPILER) -c src/main.cpp -std=c++11 -I $(LIBINCLUDE) -o build/main.o
-	$(COMPILER) -o build/main.o $(LDFLAGS) -Wall 
+	$(COMPILER) -c src/$(TARGET).cpp -std=c++11 -I $(LIBINCLUDE) -o build/main.o
+	$(COMPILER) build/$(TARGET).o -Wall $(LDFLAGS) -o $(TARGET)   
 
 clean:
 	rm -r build
