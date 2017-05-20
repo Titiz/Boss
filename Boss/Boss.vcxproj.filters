@@ -110,9 +110,6 @@
     <ClInclude Include="..\include\Camera.h">
       <Filter>Header Files\Util</Filter>
     </ClInclude>
-    <ClInclude Include="AbilityComponent.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\Components.h">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
@@ -126,6 +123,9 @@
       <Filter>Header Files\Util</Filter>
     </ClInclude>
     <ClInclude Include="..\include\RectComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
   </ItemGroup>

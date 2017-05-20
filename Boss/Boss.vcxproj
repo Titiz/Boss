@@ -47,7 +47,7 @@
     <ClInclude Include="..\include\Systems.h" />
     <ClInclude Include="..\include\VelocityComponent.h" />
     <ClInclude Include="..\include\VelocityVector.h" />
-    <ClInclude Include="AbilityComponent.h" />
+    <ClInclude Include="Boss.h" />
     <ClInclude Include="Fighting.h" />
     <ClInclude Include="playerComponent.h" />
     <ClInclude Include="positionComponent.h" />

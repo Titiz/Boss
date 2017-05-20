@@ -64,6 +64,13 @@ struct PlayerSystem : System<Requires<PositionComponent, VelocityComponent, Play
 			VelocityVector vel(vec.x, vec.y, true, 10);
 			velocityComp.velocities.push_back(vel);
 		}
+
+		if (current_event == ATTACKS::SWING) {
+			VelocityComponent& velocityComp = e.getComponent<VelocityComponent>();
+			sf::Vector2f vec = get_magnitude_in_mouse_direction(2000, e);
+			VelocityVector vel(vec.x, vec.y, true, 10);
+			velocityComp.velocities.push_back(vel);
+		}
 	}
 
 
