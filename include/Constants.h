@@ -12,6 +12,16 @@ sf::RenderWindow* WINDOW_POINTER = &WINDOW;
 Camera *CAMERA_POINTER;
 
 
+ // This system already knows which entities are affected by what ability
+
+enum AFFECTS {
+	SELF, AREA
+};
+
+enum Effects {
+	KNOCKBACK, KNOCKFORWARD, BLEED
+};
+
 enum MOVEMENT {
 	NULL_MOVE_X, NULL_MOVE_Y, MOVE_UP, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT, ROLL, SPRINT
 };

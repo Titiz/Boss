@@ -28,6 +28,9 @@
     <Filter Include="Header Files\Util">
       <UniqueIdentifier>{d172b98f-32b0-4b69-8d24-70c7ef3cde42}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Objects">
+      <UniqueIdentifier>{774b7b82-6f2c-4825-9252-59a9d8706ab3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\OneDrive\Documents\anax-master\src\anax\detail\BaseSystem.cpp">
@@ -54,9 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="playerComponent.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="positionComponent.h">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
     <ClInclude Include="Fighting.h">
@@ -127,6 +127,15 @@
     </ClInclude>
     <ClInclude Include="Boss.h">
       <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ABAcomponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Ability.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseUtil.h">
+      <Filter>Header Files\Util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

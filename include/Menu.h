@@ -21,6 +21,7 @@ private:
 	RenderSystem rend;
 	CameraSystem cameraSystem;
 	ControllerSystem contSystem;
+	AbilitySystem abilitySystem;
 	
 	
 
@@ -36,6 +37,7 @@ MenuState::MenuState()
 	world.addSystem(cameraSystem);
 	world.addSystem(rend);
 	world.addSystem(contSystem);
+	world.addSystem(abilitySystem);
 
 	player.addComponent<PositionComponent>();
 	player.addComponent<VelocityComponent>().set_max_velocity(50, 50);
@@ -74,6 +76,7 @@ void MenuState::update() {
 	play.update(deltaTime.asSeconds());
 	movsystem.update(deltaTime.asSeconds());
 	cameraSystem.update(deltaTime.asSeconds());
+	abilitySystem.update(deltaTime.asSeconds());
 	
 	
 

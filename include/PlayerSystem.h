@@ -6,6 +6,9 @@
 #include <VelocityVector.h>
 #include <SFML/System/Vector2.hpp>
 #include <math.h>     
+#include "Ability.h"
+#include "MouseUtil.h"
+#include <vector>
 
 #ifndef PLAYER_SYSTEM
 #define PLAYER_SYSTEM
@@ -42,27 +45,22 @@ struct PlayerSystem : System<Requires<PositionComponent, VelocityComponent, Play
 
 	}
 
-	sf::Vector2f get_magnitude_in_mouse_direction(float size, Entity& e) {
-		PositionComponent& posComp = e.getComponent<PositionComponent>();
-		sf::Vector2i mouse_pos = sf::Mouse::getPosition(WINDOW);
-		sf::Vector2f mouse_world_pos;
-		mouse_world_pos = WINDOW.mapPixelToCoords(mouse_pos);
-		sf::Vector2f difference_vector;
-		difference_vector.x = mouse_world_pos.x - posComp.position.x;
-		difference_vector.y = mouse_world_pos.y - posComp.position.y;
-		float magnitude = sqrt(difference_vector.x * difference_vector.x + difference_vector.y * difference_vector.y);
-		float x = size * difference_vector.x / magnitude;
-		float y = size * difference_vector.y / magnitude;
-		return sf::Vector2f(x, y);
-	}
+
 
 	void attack(Entity& e) {
 		
 		if (current_event == ATTACKS::DASH) {
-			VelocityComponent& velocityComp = e.getComponent<VelocityComponent>();
-			sf::Vector2f vec = get_magnitude_in_mouse_direction(2000, e);
-			VelocityVector vel(vec.x, vec.y, true, 10);
-			velocityComp.velocities.push_back(vel);
+			Ability ability;
+			std::vector<float> vec;
+			sf::Vector2f move_vector = get_magnitude_in_mouse_direction(2000, e);
+			vec.push_back(move_vector.x);
+			vec.push_back(move_vector.y);
+			ability.abilityMap[KNOCKFORWARD] = vec;
+			if (!e.hasComponent<ABAComponent>()) {
+				e.addComponent<ABAComponent>();
+				e.activate();
+			}
+			e.getComponent<ABAComponent>().abilities.push(ability);
 		}
 	}
 
@@ -100,7 +98,7 @@ struct PlayerSystem : System<Requires<PositionComponent, VelocityComponent, Play
 		velocityComp.velocities.push_back(vel);
 	}
 
-	void update(double deltaTime)
+void update(double deltaTime)
 	{
 		auto entities = getEntities();
 
