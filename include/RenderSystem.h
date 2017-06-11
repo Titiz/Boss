@@ -4,6 +4,7 @@
 #include <Constants.h>
 #include <iostream>
 #include <Systems.h>
+
 using namespace anax;
 
 #ifndef RENDER_SYSTEM

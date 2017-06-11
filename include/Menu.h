@@ -1,6 +1,8 @@
 #pragma once
 #include <StateStruct.h>
 #include <Systems.h>
+#include <vector>
+#include "Constants.h"
 
 
 class MenuState: public State {
@@ -13,6 +15,7 @@ private:
 	void	render();
 
 	anax::World world;
+	
 
 	sf::Clock deltaClock;
 
@@ -32,6 +35,8 @@ private:
 
 MenuState::MenuState()
 {
+	ACTIVE_WORLD = &world;
+
 	world.addSystem(play);
 	world.addSystem(movsystem);
 	world.addSystem(cameraSystem);
@@ -67,7 +72,7 @@ void MenuState::run() {
 }
 
 void MenuState::update() {
-	sf::Vector2f pos = player.getComponent<PositionComponent>().position;
+	std::vector<Entity> enemies;
 	sf::Time deltaTime = deltaClock.restart();
 
 	

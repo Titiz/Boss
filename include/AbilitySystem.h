@@ -32,19 +32,26 @@ struct AbilitySystem : System<Requires<ABAComponent>> {
 			{
 				Effects effectName = iter->first;
 				std::vector<float> vec = iter->second;
+				
 				switch (effectName) {
-				case KNOCKFORWARD:
-					VelocityComponent& velocityComp = e.getComponent<VelocityComponent>();
-					std::cout << vec.at(0) << std::endl;
-					VelocityVector vel(vec.at(0), vec.at(1), true, 10);
-					velocityComp.velocities.push_back(vel);
-					std::cout << vec.at(1) << std::endl;
+
+				case INSTANT_DAMAGE: {
+					HealthComponent& healthComp = e.getComponent<HealthComponent>();
+					healthComp.health -= vec.at(0);
+					std::cout << healthComp.health;
 					break;
+				}
+
+				case KNOCKFORWARD:{
+						VelocityComponent& velocityComp = e.getComponent<VelocityComponent>();
+						VelocityVector vel(vec.at(0), vec.at(1), true, 10);
+						velocityComp.velocities.push_back(vel);
+						break;
+					}
 				}
 			
 			}
 		}
-		std::cout << "reached" << std::endl;
 		e.removeComponent<ABAComponent>();  // Once all the effects are processed we remove the component
 		e.activate();
 	}

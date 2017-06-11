@@ -1,3 +1,4 @@
+#pragma once
 #include <PlayerComponent.h>
 #include <PositionComponent.h>
 #include <VelocityComponent.h>
@@ -5,3 +6,5 @@
 #include <ControllerComponent.h>
 #include "AccelerationComponent.h"
 #include "ABAcomponent.h"
+#include "HealthComponent.h"
+#include "InflictAbilityComponent.h"

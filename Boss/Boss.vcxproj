@@ -28,17 +28,21 @@
     <ClCompile Include="..\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\ABAcomponent.h" />
     <ClInclude Include="..\include\Ability.h" />
+    <ClInclude Include="..\include\AbilityCollisionSystem.h" />
     <ClInclude Include="..\include\AbilitySystem.h" />
     <ClInclude Include="..\include\AccelerationComponent.h" />
     <ClInclude Include="..\include\AccelerationSystem.h" />
     <ClInclude Include="..\include\Camera.h" />
     <ClInclude Include="..\include\CameraSystem.h" />
+    <ClInclude Include="..\include\HealthComponent.h" />
     <ClInclude Include="..\include\Components.h" />
     <ClInclude Include="..\include\Constants.h" />
     <ClInclude Include="..\include\ControllerComponent.h" />
     <ClInclude Include="..\include\ControllerSystem.h" />
     <ClInclude Include="..\include\Game.h" />
+    <ClInclude Include="..\include\InflictAbilityComponent.h" />
     <ClInclude Include="..\include\Menu.h" />
     <ClInclude Include="..\include\MovementSystem.h" />
     <ClInclude Include="..\include\PlayerSystem.h" />
@@ -46,13 +50,12 @@
     <ClInclude Include="..\include\RectComponent.h" />
     <ClInclude Include="..\include\RenderSystem.h" />
     <ClInclude Include="..\include\Systems.h" />
+    <ClInclude Include="..\include\Util.h" />
     <ClInclude Include="..\include\VelocityComponent.h" />
     <ClInclude Include="..\include\VelocityVector.h" />
-    <ClInclude Include="ABAcomponent.h" />
-    <ClInclude Include="Boss.h" />
+    <ClInclude Include="EntityFactory.h" />
     <ClInclude Include="Fighting.h" />
     <ClInclude Include="MouseUtil.h" />
-    <ClInclude Include="playerComponent.h" />
     <ClInclude Include="States.h" />
     <ClInclude Include="StateStruct.h" />
   </ItemGroup>

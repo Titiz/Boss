@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <Camera.h>
+#include <anax/anax.hpp>
 
 
 //Global Variables
@@ -10,6 +11,7 @@ sf::Vector2f SIZE(800, 600);
 sf::RenderWindow WINDOW(sf::VideoMode(SIZE.x, SIZE.y, 32), "Bosses");
 sf::RenderWindow* WINDOW_POINTER = &WINDOW;
 Camera *CAMERA_POINTER;
+anax::World *ACTIVE_WORLD;
 
 
  // This system already knows which entities are affected by what ability
@@ -19,7 +21,7 @@ enum AFFECTS {
 };
 
 enum Effects {
-	KNOCKBACK, KNOCKFORWARD, BLEED
+	KNOCKBACK, KNOCKFORWARD, BLEED, INSTANT_DAMAGE
 };
 
 enum MOVEMENT {
