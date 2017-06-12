@@ -55,6 +55,7 @@
     <ClInclude Include="..\include\VelocityVector.h" />
     <ClInclude Include="EntityFactory.h" />
     <ClInclude Include="Fighting.h" />
+    <ClInclude Include="GroupManager.h" />
     <ClInclude Include="MouseUtil.h" />
     <ClInclude Include="States.h" />
     <ClInclude Include="StateStruct.h" />

@@ -25,7 +25,7 @@ private:
 	CameraSystem cameraSystem;
 	ControllerSystem contSystem;
 	AbilitySystem abilitySystem;
-	
+	AbilityCollisionSystem abilColSys;
 	
 
 	Entity player = world.createEntity();
@@ -43,6 +43,8 @@ MenuState::MenuState()
 	world.addSystem(rend);
 	world.addSystem(contSystem);
 	world.addSystem(abilitySystem);
+	world.addSystem(abilColSys);
+
 
 	player.addComponent<PositionComponent>();
 	player.addComponent<VelocityComponent>().set_max_velocity(50, 50);
@@ -54,7 +56,9 @@ MenuState::MenuState()
 	Boss.addComponent<PositionComponent>();
 	Boss.addComponent<VelocityComponent>();
 	Boss.addComponent<RectComponent>().set(200, 200, sf::Color::Red);
+	Boss.addComponent<HealthComponent>().health = 100;
 	Boss.activate();
+	Groups[ENEMY].push_back(Boss);
 
 
 }
@@ -82,6 +86,7 @@ void MenuState::update() {
 	movsystem.update(deltaTime.asSeconds());
 	cameraSystem.update(deltaTime.asSeconds());
 	abilitySystem.update(deltaTime.asSeconds());
+	abilColSys.update(deltaTime.asSeconds());
 	
 	
 

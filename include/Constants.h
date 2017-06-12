@@ -12,9 +12,10 @@ sf::RenderWindow WINDOW(sf::VideoMode(SIZE.x, SIZE.y, 32), "Bosses");
 sf::RenderWindow* WINDOW_POINTER = &WINDOW;
 Camera *CAMERA_POINTER;
 anax::World *ACTIVE_WORLD;
+std::map<int, std::vector<anax::Entity>> Groups;
 
 
- // This system already knows which entities are affected by what ability
+// Different Enums used in different parts of the game.
 
 enum AFFECTS {
 	SELF, AREA
@@ -36,3 +37,6 @@ enum CAMERA {
 	NULL_CAMERA, ZOOM_IN, ZOOM_OUT, LOCK_TOGGLE,
 };
 
+enum GROUPS {
+	ALLY, ENEMY 
+};

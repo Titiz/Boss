@@ -4,6 +4,7 @@
 #include "Components.h"
 #include <Constants.h>
 #include <Menu.h>
+#include <GroupManager.h>
 
 
 using namespace anax;

@@ -146,5 +146,8 @@
     <ClInclude Include="EntityFactory.h">
       <Filter>Header Files\Util</Filter>
     </ClInclude>
+    <ClInclude Include="GroupManager.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

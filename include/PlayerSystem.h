@@ -49,7 +49,8 @@ struct PlayerSystem : System<Requires<PositionComponent, VelocityComponent, Play
 
 	void do_action(Entity& e) {
 		Ability ability;
-		switch(current_event) {
+		std::cout << current_event;
+		switch (current_event) {
 		case ATTACKS::DASH: {
 
 			std::vector<float> vec;
@@ -60,14 +61,27 @@ struct PlayerSystem : System<Requires<PositionComponent, VelocityComponent, Play
 			if (!e.hasComponent<ABAComponent>()) {
 				e.addComponent<ABAComponent>();
 				e.activate();
-				}
 			}
-	
-		case ATTACKS::SWING: {
+			e.getComponent<ABAComponent>().abilities.push(ability);
 			break;
 		}
+		
+		case ATTACKS::SWING: {
+			std::cout << "YH ";
+			std::vector<float> damage; damage.push_back(20);
+			sf::Vector2f &square_center = e.getComponent<RectComponent>().center;
+			sf::Vector2f translate_vector = get_magnitude_in_mouse_direction(200, e);
+			sf::Vector2f final_vector = square_center + translate_vector;
+			Entity square = ACTIVE_WORLD->createEntity();
+			square.addComponent<RectComponent>().set(200, 100, sf::Color::Blue, true);
+			square.addComponent<InflictAbilityComponent>().ability.abilityMap[INSTANT_DAMAGE] = damage;
+			square.addComponent<PositionComponent>().position = final_vector;
+			square.activate();
+			break;
 		}
-			e.getComponent<ABAComponent>().abilities.push(ability);
+							 
+		}
+			
 	}
 
 
