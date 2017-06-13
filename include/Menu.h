@@ -26,6 +26,7 @@ private:
 	ControllerSystem contSystem;
 	AbilitySystem abilitySystem;
 	AbilityCollisionSystem abilColSys;
+	ZeroHealthSystem zeroHealthSys;
 	
 
 	Entity player = world.createEntity();
@@ -44,6 +45,7 @@ MenuState::MenuState()
 	world.addSystem(contSystem);
 	world.addSystem(abilitySystem);
 	world.addSystem(abilColSys);
+	world.addSystem(zeroHealthSys);
 
 
 	player.addComponent<PositionComponent>();
@@ -87,6 +89,7 @@ void MenuState::update() {
 	cameraSystem.update(deltaTime.asSeconds());
 	abilitySystem.update(deltaTime.asSeconds());
 	abilColSys.update(deltaTime.asSeconds());
+	zeroHealthSys.update(deltaTime.asSeconds());
 	
 	
 

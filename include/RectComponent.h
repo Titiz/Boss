@@ -21,7 +21,7 @@ public:
 	// Set true if you want it render
 };
 
-void RectComponent::set(float width, float height, sf::Color color, Entity e, bool rend = true)
+void RectComponent::set(float width, float height, sf::Color color, Entity e, bool rend)
 {
 	size.x = width;
 	size.y = height;
