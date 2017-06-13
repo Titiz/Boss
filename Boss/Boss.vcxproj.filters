@@ -125,9 +125,6 @@
     <ClInclude Include="..\include\Ability.h">
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="MouseUtil.h">
-      <Filter>Header Files\Util</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\Util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -146,11 +143,11 @@
     <ClInclude Include="EntityFactory.h">
       <Filter>Header Files\Util</Filter>
     </ClInclude>
-    <ClInclude Include="GroupManager.h">
-      <Filter>Header Files\Objects</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\ZeroHealthSystem.h">
       <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\MouseUtil.h">
+      <Filter>Header Files\Util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

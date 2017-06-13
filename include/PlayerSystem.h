@@ -42,6 +42,7 @@ struct PlayerSystem : System<Requires<PositionComponent, VelocityComponent, Play
 			do_action(e);
 		}
 		
+		e.getComponent<RectComponent>().setRotation(get_angle_in_mouse_direction(e));
 
 	}
 
@@ -52,7 +53,6 @@ struct PlayerSystem : System<Requires<PositionComponent, VelocityComponent, Play
 		std::cout << current_event;
 		switch (current_event) {
 		case ATTACKS::DASH: {
-
 			std::vector<float> vec;
 			sf::Vector2f move_vector = get_magnitude_in_mouse_direction(2000, e);
 			vec.push_back(move_vector.x);
@@ -88,7 +88,6 @@ struct PlayerSystem : System<Requires<PositionComponent, VelocityComponent, Play
 
 	void set_velocity(Entity& e) {
 		VelocityComponent& velocityComp = e.getComponent<VelocityComponent>();
-
 		float v = 50.0f;
 		sf::Vector2f velocity;
 

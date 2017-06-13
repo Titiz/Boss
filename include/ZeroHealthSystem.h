@@ -17,8 +17,11 @@ struct ZeroHealthSystem : System<Requires<HealthComponent>>
 
 	void process(Entity& e, double deltaTime)
 	{
-		auto healthComp = e.getComponent<HealthComponent>();
+		auto &healthComp = e.getComponent<HealthComponent>();
 		if (healthComp.health <= 0) {
+			Groups[healthComp.group].erase(
+				std::remove(Groups[healthComp.group].begin(), 
+					Groups[healthComp.group].end(), e), Groups[healthComp.group].end());
 			e.deactivate();
 			e.kill();
 		}

@@ -13,6 +13,7 @@ struct RectComponent : Component
 {
 public:
 	void set(float width, float height, sf::Color color, Entity e, bool rend = true);
+	void setRotation(float angle); 
 
 	sf::Vector2f size;
 	sf::RectangleShape rect;
@@ -26,12 +27,19 @@ void RectComponent::set(float width, float height, sf::Color color, Entity e, bo
 	size.x = width;
 	size.y = height;
 	rect.setPosition(e.getComponent<PositionComponent>().position);
-	center.x = rect.getPosition().x + size.x / 2;
-	center.y = rect.getPosition().y + size.y / 2;
+	rect.setOrigin(size.x/2, size.y/2);
+	center.x = rect.getPosition().x + size.x/2;
+	center.y = rect.getPosition().y + size.y/2;
 	rect.setSize(size);
 	rect.setFillColor(color);
 	render = rend;
 }
+
+void RectComponent::setRotation(float angle) {
+	rect.setRotation(angle);
+}
+
+
 
 #endif //RECT_COMPONENT
 

@@ -18,7 +18,6 @@ struct AbilityCollisionSystem : System<Requires<PositionComponent, RectComponent
 		Ability &ability = e.getComponent<InflictAbilityComponent>().ability;
 		float &time_to_activation = e.getComponent<InflictAbilityComponent>().time_to_activation;
 		// FOR NOW ASSUMED THAT PLAYER CASTS ABILITY
-		std::cout << "ASDCX";	
 		if (time_to_activation <= 0) {
 			for(std::vector<Entity>::iterator it = Groups[ENEMY].begin(); it != Groups[ENEMY].end(); ++it) { //Go through every enemy
 				if (IsCollided(e.getComponent<RectComponent>().rect, it->getComponent<RectComponent>().rect)) { // Check for collision with every square

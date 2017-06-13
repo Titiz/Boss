@@ -44,6 +44,7 @@
     <ClInclude Include="..\include\Game.h" />
     <ClInclude Include="..\include\InflictAbilityComponent.h" />
     <ClInclude Include="..\include\Menu.h" />
+    <ClInclude Include="..\include\MouseUtil.h" />
     <ClInclude Include="..\include\MovementSystem.h" />
     <ClInclude Include="..\include\PlayerSystem.h" />
     <ClInclude Include="..\include\PositionComponent.h" />
@@ -56,8 +57,6 @@
     <ClInclude Include="..\include\ZeroHealthSystem.h" />
     <ClInclude Include="EntityFactory.h" />
     <ClInclude Include="Fighting.h" />
-    <ClInclude Include="GroupManager.h" />
-    <ClInclude Include="MouseUtil.h" />
     <ClInclude Include="States.h" />
     <ClInclude Include="StateStruct.h" />
   </ItemGroup>

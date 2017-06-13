@@ -25,7 +25,6 @@ struct AbilitySystem : System<Requires<ABAComponent>> {
 			e.getComponent<ABAComponent>().abilities.pop();
 			std::map<Effects, std::vector<float>>::iterator iter;
 			// Do what the ability's effects are.
-
 			// We go through every effect listed in the ability
 			// And do whatever we need to depending on the requirements
 			for (iter = currentAbility.abilityMap.begin(); iter != currentAbility.abilityMap.end(); iter++) 

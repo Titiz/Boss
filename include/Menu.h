@@ -58,7 +58,7 @@ MenuState::MenuState()
 	Boss.addComponent<PositionComponent>();
 	Boss.addComponent<VelocityComponent>();
 	Boss.addComponent<RectComponent>().set(200, 200, sf::Color::Red, Boss);
-	Boss.addComponent<HealthComponent>().health = 100;
+	Boss.addComponent<HealthComponent>().set(100, ENEMY, false);
 	Boss.activate();
 	Groups[ENEMY].push_back(Boss);
 
@@ -89,12 +89,17 @@ void MenuState::update() {
 	cameraSystem.update(deltaTime.asSeconds());
 	abilitySystem.update(deltaTime.asSeconds());
 	abilColSys.update(deltaTime.asSeconds());
-	zeroHealthSys.update(deltaTime.asSeconds());
+	
 	
 	
 
 	//render Systems
 	rend.update(deltaTime.asSeconds());
+
+
+	// Deletion systems:
+
+	zeroHealthSys.update(deltaTime.asSeconds());
 
 	world.refresh();
 }
