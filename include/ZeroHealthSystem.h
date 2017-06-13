@@ -21,7 +21,7 @@ struct ZeroHealthSystem : System<Requires<HealthComponent>>
 		if (healthComp.health <= 0) {
 			Groups[healthComp.group].erase(
 				std::remove(Groups[healthComp.group].begin(), 
-					Groups[healthComp.group].end(), e), Groups[healthComp.group].end());
+				Groups[healthComp.group].end(), e), Groups[healthComp.group].end()); // Removes from group
 			e.deactivate();
 			e.kill();
 		}

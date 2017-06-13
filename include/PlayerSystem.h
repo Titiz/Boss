@@ -76,6 +76,7 @@ struct PlayerSystem : System<Requires<PositionComponent, VelocityComponent, Play
 			square.addComponent<PositionComponent>().position = final_vector;
 			square.addComponent<RectComponent>().set(200, 100, sf::Color::Blue, square);
 			square.addComponent<InflictAbilityComponent>().ability.abilityMap[INSTANT_DAMAGE] = damage;
+			square.getComponent<RectComponent>().setRotation(get_angle_in_mouse_direction(e));
 			square.activate();
 			break;
 		}

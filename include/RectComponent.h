@@ -27,7 +27,7 @@ void RectComponent::set(float width, float height, sf::Color color, Entity e, bo
 	size.x = width;
 	size.y = height;
 	rect.setPosition(e.getComponent<PositionComponent>().position);
-	rect.setOrigin(size.x/2, size.y/2);
+	rect.setOrigin(size.x/2, size.y/2); // set origin from (0,0) to the center of rectangle
 	center.x = rect.getPosition().x + size.x/2;
 	center.y = rect.getPosition().y + size.y/2;
 	rect.setSize(size);
