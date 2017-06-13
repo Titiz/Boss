@@ -49,13 +49,13 @@ MenuState::MenuState()
 	player.addComponent<PositionComponent>();
 	player.addComponent<VelocityComponent>().set_max_velocity(50, 50);
 	player.addComponent<PlayerComponent>();
-	player.addComponent<RectComponent>().set(50, 50, sf::Color::Green);
+	player.addComponent<RectComponent>().set(50, 50, sf::Color::Green, player);
 	player.addComponent<ControllerComponent>();
 	player.activate();
 
 	Boss.addComponent<PositionComponent>();
 	Boss.addComponent<VelocityComponent>();
-	Boss.addComponent<RectComponent>().set(200, 200, sf::Color::Red);
+	Boss.addComponent<RectComponent>().set(200, 200, sf::Color::Red, Boss);
 	Boss.addComponent<HealthComponent>().health = 100;
 	Boss.activate();
 	Groups[ENEMY].push_back(Boss);

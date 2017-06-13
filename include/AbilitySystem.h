@@ -38,7 +38,7 @@ struct AbilitySystem : System<Requires<ABAComponent>> {
 				case INSTANT_DAMAGE: {
 					HealthComponent& healthComp = e.getComponent<HealthComponent>();
 					healthComp.health -= vec.at(0);
-					std::cout << healthComp.health;
+					std::cout << healthComp.health;	
 					break;
 				}
 

@@ -73,9 +73,9 @@ struct PlayerSystem : System<Requires<PositionComponent, VelocityComponent, Play
 			sf::Vector2f translate_vector = get_magnitude_in_mouse_direction(200, e);
 			sf::Vector2f final_vector = square_center + translate_vector;
 			Entity square = ACTIVE_WORLD->createEntity();
-			square.addComponent<RectComponent>().set(200, 100, sf::Color::Blue, true);
-			square.addComponent<InflictAbilityComponent>().ability.abilityMap[INSTANT_DAMAGE] = damage;
 			square.addComponent<PositionComponent>().position = final_vector;
+			square.addComponent<RectComponent>().set(200, 100, sf::Color::Blue, square);
+			square.addComponent<InflictAbilityComponent>().ability.abilityMap[INSTANT_DAMAGE] = damage;
 			square.activate();
 			break;
 		}

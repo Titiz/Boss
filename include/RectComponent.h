@@ -12,7 +12,7 @@ using namespace anax;
 struct RectComponent : Component
 {
 public:
-	void set(float width, float height, sf::Color color, bool rend = true);
+	void set(float width, float height, sf::Color color, Entity e, bool rend = true);
 
 	sf::Vector2f size;
 	sf::RectangleShape rect;
@@ -21,10 +21,11 @@ public:
 	// Set true if you want it render
 };
 
-void RectComponent::set(float width, float height, sf::Color color, bool rend)
+void RectComponent::set(float width, float height, sf::Color color, Entity e, bool rend = true)
 {
 	size.x = width;
 	size.y = height;
+	rect.setPosition(e.getComponent<PositionComponent>().position);
 	center.x = rect.getPosition().x + size.x / 2;
 	center.y = rect.getPosition().y + size.y / 2;
 	rect.setSize(size);
